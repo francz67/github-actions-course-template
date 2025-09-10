@@ -3,4 +3,13 @@ on: pull_request_review
 
 jobs:
  labelWhen Approved:
- runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
+  steps:
+  - name: label-when-approved
+    uses: realstealthninja/label-when-approved@v1.0.0
+    env:
+    approvals: "1"
+     secret: ${{ secrets.GITHUB_TOKEN }}
+     label: 'approved'
+ 
+ 
